@@ -1,0 +1,63 @@
+body {
+    font-family: "Montserrat", ital;
+}
+
+.top-navigation {
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+}
+
+.top-navigation .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-navigation a {
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+}
+
+.top-navigation a:hover {
+    background-color: #ddd;
+    color: #1e293b;
+}
+
+.top-navigation a.active {
+    color: rgb(8, 97, 8);
+}
+
+/* Add the underline indicator for active link */
+.top-navigation a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(8, 97, 8);
+}
+
+/* .search-icon {
+    position: absolute;
+    right: 20px;
+    color: #cbd5e1;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    display: block;
+} */
+
+/* .search-icon:hover {
+    color: #4ade80;
+} */
