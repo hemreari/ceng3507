@@ -1,25 +1,103 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet">
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
-        <title>Home</title>
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+    <title>Home</title>
+  </head>
 
-    <body>
-        <div class="top-navigation">
-            <div class="nav-links">
-                <a class="active" href="#home">Home</a>
-                <a href="#projects">Projects</a>
-                <a href="#readinglist">Reading List</a>
-                <a href="#about">About</a>
-            </div>
+  <body>
+    <div class="top-navigation">
+      <div class="nav-links">
+        <a class="active" href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#readinglist">Reading List</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+
+    <div class="post-grid">
+      <div class="latest-post">
+        <h1 class="latest-post-title">Lorem Ipsum</h1>
+        <p class="latest-post-desc">
+          Dolar sit amet, lorem ipsum dolar sit amet
+        </p>
+        <div class="post-meta">
+          <div class="author-avatar"></div>
+          <span>OCT 27</span>
+          <span>.</span>
+          <span>EMRE ARI</span>
         </div>
+      </div>
+      <div>
+        <img
+          src="latest-post.jpg"
+          alt="Lorem Ipsum"
+          class="latest-post-image"
+        />
+      </div>
+    </div>
 
-    </body>
+    <main>
+      <div class="article-nav-tabs">
+        <a class="article-nav-tab active">Latest</a>
+        <a class="article-nav-tab">Top</a>
+        <a class="article-search-icon">🔍</a>
+      </div>
+
+      <div class="articles">
+        <article class="article">
+          <div class="article-content">
+            <h2>Lorem Ipsum</h2>
+            <p>Dolar sit amet</p>
+            <div class="article-meta">OCT 29 . Emre ARI</div>
+          </div>
+          <div>
+            <img
+              src="latest-post.jpg"
+              alt="Lorem Ipsum"
+              class="article-image"
+            />
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article-content">
+            <h2>Lorem Ipsum</h2>
+            <p>Dolar sit amet</p>
+            <div class="article-meta">OCT 30 . Emre ARI</div>
+          </div>
+          <div>
+            <img
+              src="latest-post.jpg"
+              alt="Lorem Ipsum"
+              class="article-image"
+            />
+          </div>
+        </article>
+
+        <article class="article">
+          <div class="article-content">
+            <h2>Lorem Ipsum</h2>
+            <p>Dolar sit amet</p>
+            <div class="article-meta">OCT 31 . Emre ARI</div>
+          </div>
+          <div>
+            <img
+              src="latest-post.jpg"
+              alt="Lorem Ipsum"
+              class="article-image"
+            />
+          </div>
+        </article>
+      </div>
+    </main>
+  </body>
 </html>
