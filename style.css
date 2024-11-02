@@ -1,10 +1,11 @@
 body {
   font-family: "Montserrat", ital;
+  background-color: #eee;
 }
 
 .top-navigation {
   position: relative;
-  background-color: white;
+  background-color: #eee;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +25,7 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1.7vw;
   position: relative;
 }
 
@@ -37,7 +38,7 @@ body {
   color: rgb(8, 97, 8);
 }
 
-/* Add the underline indicator for active link */
+/* underline indicator for active link */
 .top-navigation a.active::after {
   content: "";
   position: absolute;
@@ -48,27 +49,12 @@ body {
   background-color: rgb(8, 97, 8);
 }
 
-/* .search-icon {
-    position: absolute;
-    right: 20px;
-    color: #cbd5e1;
-    cursor: pointer;
-    height: 20px;
-    width: 20px;
-    display: block;
-} */
-
-/* .search-icon:hover {
-    color: #4ade80;
-} */
-
-.post-grid {
+.latest-post-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
   margin-top: 25px;
-  /* margin: 15%; */
   margin-right: 15%;
   margin-left: 15%;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
@@ -76,9 +62,9 @@ body {
 }
 
 .latest-post-image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 20px;
 }
 
 .latest-post {
@@ -86,35 +72,28 @@ body {
 }
 
 .latest-post-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.6vw;
+  font-weight: 600;
   color: #333;
   margin-bottom: 16px;
 }
 
 .latest-post-desc {
-  font-size: 1.1rem;
+  font-size: 1.2vw;
   color: #666;
   margin-bottom: 24px;
   line-height: 1.5;
 }
 
-.post-meta {
+.latest-post-meta {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #666;
-  font-size: 0.9rem;
+  color: rgb(8, 97, 8);
+  font-size: 0.9vw;
 }
 
-.author-avatar {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: #eee;
-}
-
-.article-nav-tabs {
+.post-nav-tabs {
   display: flex;
   gap: 20px;
   align-items: center;
@@ -127,15 +106,15 @@ body {
   background-color: rgba(165, 158, 158, 0.298);
 }
 
-.article-nav-tab {
+.post-nav-tab {
   padding: 8px 16px;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 1.2vw;
   color: #666;
 }
 
-article-nav-tab.active {
+post-nav-tab.active {
   background-color: #f0f0f0;
   color: #000;
   font-weight: 500;
@@ -149,52 +128,169 @@ article-nav-tab.active {
   cursor: pointer;
 }
 
-.articles {
+.posts {
   display: grid;
   align-items: center;
   margin-left: 25%;
   margin-right: 25%;
+  gap: 30px;
 }
 
-.article {
+.post {
   border-bottom: 1px solid #eee;
-  padding: 30px, 0;
   display: flex;
   justify-content: space-between;
-  gap: 40px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  gap: 30px;
+  padding: 20px 0;
+  border-radius: 20px;
 }
 
-.article-content {
+.post-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.article-meta {
+.post-meta {
   display: flex;
   align-items: center;
   gap: 8px;
   color: #888;
-  font-size: 14px;
+  font-size: 0.9vw;
+  color: rgb(8, 97, 8);
 }
 
-.article-image {
-  width: 300px;
-  height: 180px;
-  background-color: #f5f5f5;
-  border-radius: 8px;
+.post-image-container {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
 }
 
-.article h2 {
-  font-size: 24px;
+.post-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.post h2 {
+  font-size: 1.2vw;
   font-weight: 600;
-  margin-bottom: 12px;
   color: #1a1a1a;
 }
 
-.article p {
-  font-size: 16px;
+.post p {
+  font-size: 1vw;
   color: #666;
-  margin-bottom: 16px;
   line-height: 1.5;
+}
+
+.hover-effect {
+  padding: 20px;
+  margin: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+}
+
+.hover-effect:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1200px) {
+  .latest-post-grid {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+
+  .post-nav-tabs,
+  .posts {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .latest-post-grid {
+    margin-right: 5%;
+    margin-left: 5%;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .post {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .post-image-container {
+    width: 100%;
+    height: 200px;
+  }
+
+  .post-nav-tabs,
+  .posts {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .post-nav-tab {
+    font-size: 2vw;
+  }
+
+  .latest-post-title {
+    font-size: 4vw;
+  }
+
+  .latest-post-desc {
+    font-size: 2.2vw;
+  }
+
+  .post h2 {
+    font-size: 3vw;
+  }
+
+  .post p {
+    font-size: 2.1vw;
+  }
+
+  .post-meta {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .latest-post-grid,
+  .post-nav-tabs,
+  .post {
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+
+  .post-nav-tab {
+    font-size: 3vw;
+  }
+
+  .latest-post-title {
+    font-size: 24px;
+  }
+
+  .latest-post-desc {
+    font-size: 16px;
+  }
+
+  .post h2 {
+    font-size: 18px;
+  }
+
+  .post p {
+    font-size: 14px;
+  }
+
+  .post-meta {
+    font-size: 8px;
+  }
 }
