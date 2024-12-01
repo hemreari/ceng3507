@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <title>SMS</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1>Student Management System</h1>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Lecture Management Section -->
+      <section id="lecture-section" class="section">
+        <h2>Lecture Management</h2>
+        <form id="lecture-form">
+          <div class="form-group">
+            <label>Lecture Name:</label>
+            <input
+              type="text"
+              id="lecture-name"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Grading Scale:</label>
+            <select id="grading-scale" class="form-control" required>
+              <option value="10">10-point scale</option>
+              <option value="7">7-point scale</option>
+            </select>
+          </div>
+          <button type="submit" class="buton buton-primary">Add Lecture</button>
+        </form>
+      </section>
+
+      <!-- Student Management Section -->
+      <section id="student-section" class="section">
+        <h2>Student Management</h2>
+        <form id="student-form">
+          <div class="form-group">
+            <label>Select Lecture:</label>
+            <select id="lecture-select" class="form-control" required></select>
+          </div>
+          <div class="form-group">
+            <label>Student ID:</label>
+            <input type="text" id="student-id" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>Name:</label>
+            <input
+              type="text"
+              id="student-name"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Surname:</label>
+            <input
+              type="text"
+              id="student-surname"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Midterm Score:</label>
+            <input
+              type="number"
+              id="midterm-score"
+              class="form-control"
+              min="0"
+              max="100"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Final Score:</label>
+            <input
+              type="number"
+              id="final-score"
+              class="form-control"
+              min="0"
+              max="100"
+              required
+            />
+          </div>
+          <button type="submit" class="buton buton-primary">Add Student</button>
+        </form>
+      </section>
+
+      <!-- Edit Student Modal -->
+      <div id="edit-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Edit Student</h2>
+          <form id="edit-form">
+            <input type="hidden" id="edit-student-id" />
+            <div class="form-group">
+              <label>Name:</label>
+              <input type="text" id="edit-name" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label>Surname:</label>
+              <input
+                type="text"
+                id="edit-surname"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Midterm Score:</label>
+              <input
+                type="number"
+                id="edit-midterm"
+                class="form-control"
+                min="0"
+                max="100"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Final Score:</label>
+              <input
+                type="number"
+                id="edit-final"
+                class="form-control"
+                min="0"
+                max="100"
+                required
+              />
+            </div>
+            <button type="submit" class="buton buton-primary">
+              Save Changes
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Registered Lectures Section -->
+      <section id="lectures-section" class="section">
+        <h2>Registered Lectures</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Lecture Name</th>
+                <th>Grading Scale</th>
+                <th>Total Students</th>
+                <th>Passed Students</th>
+                <th>Failed Students</th>
+                <th>Class Average</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="lectures-table">
+              <!-- Lectures will be added here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Search Results Section -->
+      <section id="search-results-section" class="section">
+        <h2>Student Records</h2>
+        <div class="search-container">
+          <div class="form-group">
+            <label>Search by:</label>
+            <select id="search-type" class="form-control">
+              <option value="all">All Fields</option>
+              <option value="id">Student ID</option>
+              <option value="name">Name</option>
+              <option value="surname">Surname</option>
+              <option value="lecture">Lecture</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Filter by Grade:</label>
+            <select id="grade-filter" class="form-control">
+              <option value="all">All Grades</option>
+              <option value="passed">Passed Only</option>
+              <option value="failed">Failed Only</option>
+              <option value="A">Grade A</option>
+              <option value="B">Grade B</option>
+              <option value="C">Grade C</option>
+              <option value="D">Grade D</option>
+              <option value="F">Grade F</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Search:</label>
+            <input
+              type="text"
+              id="search-input"
+              class="form-control"
+              placeholder="Search..."
+            />
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Lecture</th>
+                <th>Midterm</th>
+                <th>Final</th>
+                <th>Average</th>
+                <th>Letter Grade</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="results-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
